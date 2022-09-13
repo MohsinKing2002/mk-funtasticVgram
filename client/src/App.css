@@ -1,0 +1,266 @@
+/***************************************** google font ****************************************/
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400&display=swap');
+
+/***************************************** Reset **********************************************/
+*{
+  margin: 0;
+  padding: 0;
+  font-family: 'Poppins', sans-serif;
+  box-sizing: border-box;
+}
+
+body{
+  background: linear-gradient(#34346d, #9a1c1c);
+}
+
+.center{
+  min-height: 92vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+/***************************************** Utilities **********************************************/
+.link{
+  text-decoration: none;
+}
+.util_page{
+  height: 90vh;
+  width: 98%;
+  background: white;
+}
+.util_page img{
+  height: 45vh;
+}
+hr{
+  margin:10px 0 !important;
+}
+
+h1, h2, h3, h4, h5, h6 {
+  margin-bottom: 0 !important;
+}
+
+h6{
+  padding: 10rem 0;
+  font-size: 2.4rem !important;
+  color: #4a0b0b;
+  font-weight: bold !important;
+  letter-spacing: 4px;
+  filter: drop-shadow(4px 7px 5px black);
+}
+
+p{
+  margin: 0 !important;
+}
+.post_btn{
+  border: none;
+  background: transparent;
+}
+/***************************************** Header **********************************************/
+.Nav{
+  flex-direction: row !important;
+  justify-content: space-around !important;
+  width: 100%;
+}
+
+.nav-icon{
+  font-size: 30px;
+}
+
+.logo{
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #c72db8;
+  font-size: 1.5rem;
+}
+
+.logo img{
+  margin-right: 5px;
+  height: 7vh;
+  border-radius: 100%;
+}
+
+/***************************************** Login **********************************************/
+.mobile-card{
+  width: 25% !important;
+}
+.card-title{
+  color: rgb(61, 12, 95);
+}
+
+.btn{
+  width: 40%;
+}
+.card-footer{
+  text-align: center !important;
+}
+/***************************************** Home **********************************************/
+.home_page{
+  height: 91vh;
+  width: 98%;
+  background-color: #e7eced;
+  display: flex;
+  justify-content: space-around;
+  /* background-color: azure; */
+}
+.row{
+  height: 90vh;
+}
+
+.title{
+  font-size: 20px;
+  padding-top: 15px;
+  color: indigo;
+  text-align: center;
+  letter-spacing: 1px;
+}
+.users{
+  padding: 5px 12px !important;
+  margin: 6px 0 !important;
+}
+
+.user{
+  transition: all ease-in-out 1.6s;
+  padding: 2px 12px;
+  border-radius: 10px;
+}
+
+.user:hover{
+  background-color: #add8e64a;
+}
+.user h4{
+  color: indigo;
+  letter-spacing: 1px;
+}
+.user img{
+  height: 5vh;
+  margin-right: 13px;
+  border-radius: 100%;
+}
+
+.card{
+    width: 55%;
+    margin: 15px auto;
+    padding: 10px 0;
+}
+
+.post-img{
+  width: 70%;
+  border-radius: 10px;
+  margin: 5px auto;
+}
+
+.styled-bar::-webkit-scrollbar{
+  width: 4.4px;
+}
+.styled-bar::-webkit-scrollbar-thumb{
+  background: linear-gradient(#34346d, #9a1c1c);
+}
+/***************************************** Account **********************************************/
+.text-muted{
+    text-align: center;
+    margin: 0 !important;
+}
+.profile{
+  text-align: center;
+  height: 100%;
+  padding: 1rem 4rem;
+}
+.profile img{
+  height: 5vh;
+}
+.btn{
+  width: 75%;
+  margin: 6px 0;
+}
+.icon{
+  cursor: pointer;
+  color: darkblue;
+  font-size: 30px !important;
+  margin: 0 15px;
+}
+/***************************************** Message **********************************************/
+.message_box{
+  height: 50vh;
+}
+.message{
+  width: 35% !important;
+}
+
+.message_icon {
+  font-size: 38px !important;
+  cursor: pointer;
+  transition: all 0.2s ease-in-out;
+}
+.message_icon:hover{
+  background-color: rgba(0, 255, 255, 0.83) !important;
+}
+
+.message-content h4{
+  border-radius: 4px;
+  color: azure;
+  display: inline-block;
+  padding: 4px 12px;
+  font-size: 17px;
+  margin-bottom: 6px !important;
+}
+
+#start{
+  text-align: start;
+}
+#end{
+  text-align: end;
+}
+#me{
+  background-color: #34346d;
+}
+#other{
+  background-color: seagreen;
+}
+
+.animate-live{
+  transition: all 0.4s ease-in-out;
+  animation: animate 1s linear 0s infinite alternate-reverse;
+}
+
+@keyframes animate {
+  0%{
+    opacity: 0.3;
+  }
+  50%{
+    opacity: 0.6;
+  }
+  100%{
+    opacity: 1;
+  }
+}
+
+/***************************************** Responsive code **********************************************/
+@media screen and (max-width: 850px) {
+  body{
+    background-color: blue;
+  }
+  .home_page{
+    height: auto;
+    flex-direction: column;
+  }
+  .card{
+    width: 90% !important;
+    padding: 8px;
+  }
+
+  .mobile-card{
+    background-color: red;
+    width: 90% !important;
+  }
+  .post-img{
+    width: 85%;
+  }
+  .profile{
+    padding: 8px 2px;
+  }
+  .util_page img{
+    height: 25vh;
+  }
+}
