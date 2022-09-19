@@ -71,7 +71,7 @@ function SingleUser() {
         }
     }, [dispatch, error, postError, message]);
 
-    return loading === true || postLoading === true ? <Loader/> : (
+    return (loading === true || postLoading === true) ? <Loader/> : (
         <div className="home_page">
             <Col sm={5} className="rounded bg-light styled-bar d-flex justify-content-center h-100 overflow-auto">
                 <div className="profile ">

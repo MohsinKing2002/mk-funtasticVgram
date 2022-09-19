@@ -15,6 +15,7 @@ import SingleUser from "./components/User/SingleUser";
 import ErrorPage from "./components/Util/ErrorPage";
 import UpdatePost from "./components/Post/UpdatePost";
 import Message from './components/Util/Message';
+import DeleteUser from "./components/User/DeleteUser";
 
 
 const App = ()=>{
@@ -37,6 +38,7 @@ const App = ()=>{
           <Route path="/search" element={isAuthenticated ? <Search/> : <Login/> } />
           <Route path="/account" element={isAuthenticated ? <Account/> : <Login/> } />
           <Route path="/me/update" element={isAuthenticated ? <Update/> : <Login/> } />
+          <Route path="/me/delete" element={isAuthenticated ? <DeleteUser/> : <Login/> } />
           <Route path="/users/:id" element={isAuthenticated ? <SingleUser/> : <Login/> } />
 
           <Route path="/new" element={isAuthenticated ? <NewPost/> : <Login /> } />

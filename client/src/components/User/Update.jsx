@@ -15,7 +15,7 @@ function Update() {
 
     const [avatar, setAvatar] = useState();
     const [user, setUser] = useState({
-        name: "", email: ""
+        name: "", email: "", password: ""
     })
 
     let name, value;
@@ -41,7 +41,7 @@ function Update() {
     const handleUpdate = (e)=>{
         e.preventDefault();
 
-        dispatch(updateProfile(user.name, user.email, avatar));
+        dispatch(updateProfile(user.name, user.email, user.password, avatar));
     }
 
     useEffect(()=>{
@@ -57,7 +57,7 @@ function Update() {
                 type: "ClearMessages"
             })
         }
-    }, [dispatch, error, message]);
+    }, [dispatch, error, message, navigate]);
 
     return (
         <Card className="text-center mobile-card">
@@ -84,6 +84,10 @@ function Update() {
 
                     <Form.Group className="mb-4" controlId="formBasicEmail">
                         <Form.Control name="email" type="email" value={user.email} onChange={handleInputs} placeholder="Enter Your Email" />
+                    </Form.Group>
+
+                    <Form.Group className="mb-4" controlId="formBasicEmail">
+                        <Form.Control name="password" type="password" value={user.password} onChange={handleInputs} placeholder="Enter Your Password" />
                     </Form.Group>
 
                     <Button disabled={loading} type="submit" variant="primary"> {loading ? "Updating.." : "Update"} </Button>

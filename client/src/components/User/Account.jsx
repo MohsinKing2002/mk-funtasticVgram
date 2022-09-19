@@ -9,7 +9,7 @@ import FavoriteBorderIcon from '@mui/icons-material/FavoriteBorder';
 import StickyNote2Icon from '@mui/icons-material/StickyNote2';
 import { useEffect } from 'react';
 import {useDispatch, useSelector} from 'react-redux';
-import { deleteUser, loadUser, logoutUser } from '../Actions/User';
+import { loadUser, logoutUser } from '../Actions/User';
 import { NavLink } from 'react-router-dom';
 import { getMyPosts } from '../Actions/Post';
 import Loader from "../Util/Loader";
@@ -26,12 +26,8 @@ function Account() {
         dispatch(getMyPosts());
     }, [dispatch]);
 
-    const handleLogout = ()=>{
+    const handleLogout =()=>{
         dispatch(logoutUser());
-    }
-
-    const handleDelete = ()=>{
-        dispatch(deleteUser());
     }
 
     useEffect(()=>{
@@ -129,8 +125,12 @@ function Account() {
                         <Button variant="outline-info">
                             <NavLink className="link text-primary" to="/me/update"> Edit Profile</NavLink>
                         </Button>{' '}
+
                         <Button onClick={handleLogout} variant="outline-warning">Log out</Button>{' '}
-                        <Button onClick={handleDelete} variant="outline-danger">Delete Profile</Button>{' '}
+
+                         <Button variant="danger">
+                            <NavLink className="link text-light" to="/me/delete"> Delete Profile</NavLink>
+                        </Button>{' '}
                     </div>
                 </Col>
 

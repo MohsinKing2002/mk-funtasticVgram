@@ -39,7 +39,7 @@ function Home() {
 
     }, [dispatch, error, postError, message]);
 
-    return loading === true || postLoading === true ? <Loader/> : (
+    return (loading === true || postLoading === true) ? <Loader/> : (
         <div className="home_page">
                 <Col sm={4} className="rounded styled-bar h-100 bg-light px-1 overflow-auto">
                     <h3 className="title">users you may know..</h3> <hr />  
