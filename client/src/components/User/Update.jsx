@@ -15,7 +15,7 @@ function Update() {
 
     const [avatar, setAvatar] = useState();
     const [user, setUser] = useState({
-        name: "", email: "", password: ""
+        name: "", email: "", password: "", confirmPassword: ""
     })
 
     let name, value;
@@ -41,7 +41,15 @@ function Update() {
     const handleUpdate = (e)=>{
         e.preventDefault();
 
-        dispatch(updateProfile(user.name, user.email, user.password, avatar));
+        if(user.password){
+            if(user.password === user.confirmPassword)
+                dispatch(updateProfile(user.name, user.email, user.password, avatar));
+            else
+                alert("Passwords are not matching..");
+        }
+        else{
+            dispatch(updateProfile(user.name, user.email, user.password, avatar));
+        }
     }
 
     useEffect(()=>{
@@ -87,7 +95,11 @@ function Update() {
                     </Form.Group>
 
                     <Form.Group className="mb-4" controlId="formBasicEmail">
-                        <Form.Control name="password" type="password" value={user.password} onChange={handleInputs} placeholder="Enter Your Password" />
+                        <Form.Control name="password" type="password" value={user.password} onChange={handleInputs} placeholder="Enter New Password" />
+                    </Form.Group>
+
+                    <Form.Group className="mb-4" controlId="formBasicEmail">
+                        <Form.Control name="confirmPassword" type="password" value={user.confirmPassword} onChange={handleInputs} placeholder="* Confirm Your Password" />
                     </Form.Group>
 
                     <Button disabled={loading} type="submit" variant="primary"> {loading ? "Updating.." : "Update"} </Button>

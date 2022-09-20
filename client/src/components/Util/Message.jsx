@@ -14,7 +14,7 @@ const socket = io.connect("/");
 function ResponsiveAutoExample() {
 
     const [name, setName] = useState();
-    const [room, setRoom] = useState();
+    const [room, setRoom] = useState("123");
     const [chat, setChat] = useState("");
     const [Data, setData] = useState([]);
     const [show, setShow] = useState(false);
@@ -64,10 +64,13 @@ function ResponsiveAutoExample() {
                 </div>
             </Card.Header>
             <Card.Body>
-                <Card.Title className="animate-live text-danger d-flex align-items-center justify-content-center"> 
-                    <RadioButtonCheckedIcon className="text-danger icon me-2" />
-                    Live Chat
-                </Card.Title>
+                {
+                    show ? 
+                    <Card.Title className="animate-live text-danger d-flex align-items-center justify-content-center"> 
+                        <RadioButtonCheckedIcon className="text-danger icon me-2" />
+                        Live Chat
+                    </Card.Title> : null
+                }
                 <hr />
 
                 {
@@ -102,10 +105,19 @@ function ResponsiveAutoExample() {
                 }
 
             </Card.Body>
-            <Card.Footer className="text-muted">
-                Use Default Room Id 123 <br />
-                Or Create a new one with your friends..
+            {
+                !show ? (
+                <Card.Footer className="text-muted">
+                    Use Default Room Id 123 <br />
+                    Or Create a new one with your friends..
+                </Card.Footer>
+            ) : (
+                <Card.Footer className="text-muted">
+                    Your chats are not parmanent !! <br />
+                    You can leave anytime.. (by reloding..)
             </Card.Footer>
+            )
+            }
         </Card>
     );
 }

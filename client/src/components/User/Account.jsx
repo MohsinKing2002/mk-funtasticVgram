@@ -47,7 +47,7 @@ function Account() {
 
     return loading === true || postLoading === true ? <Loader/> : (
         <div className="home_page">
-            <Col sm={5} className="rounded  bg-light styled-bar d-flex justify-content-center h-100 overflow-auto">
+            <Col sm={5} className="mobile-users styled-bar rounded  bg-light styled-bar d-flex justify-content-center h-100 overflow-auto">
                     <div className="profile">
                     <img style={{ height: "25vh", borderRadius: "150px", marginBottom: "20px" }} src={user && user.avatar.url} alt="avatar" />
 
@@ -55,7 +55,7 @@ function Account() {
                             <AccountCircleIcon className='icon'/>
                             <h4>{user && user.name}</h4>
                         </div>
-                        <div className="user d-flex align-items-center my-2">
+                        <div style={{lineBreak: "anywhere"}} className="user d-flex align-items-center my-2">
                             <EmailIcon className="icon"/>
                             <h4>{user && user.email}</h4>
                         </div>

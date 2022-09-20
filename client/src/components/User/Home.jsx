@@ -9,7 +9,7 @@ import Post from '../Post/Post';
 
 function Home() {
     const dispatch = useDispatch();
-    const {users, error, loading} = useSelector(state=>state.user);
+    const {users, error, loading} = useSelector(state=>state.allUsers);
     const {posts, error:postError, loading:postLoading, message} = useSelector(state=>state.post);
 
     useEffect(()=>{
@@ -39,9 +39,9 @@ function Home() {
 
     }, [dispatch, error, postError, message]);
 
-    return (loading === true || postLoading === true) ? <Loader/> : (
+    return loading === true || postLoading === true ? <Loader/> : (
         <div className="home_page">
-                <Col sm={4} className="rounded styled-bar h-100 bg-light px-1 overflow-auto">
+                <Col sm={4} className="mobile-users rounded styled-bar h-100 bg-light px-1 overflow-auto">
                     <h3 className="title">users you may know..</h3> <hr />  
                     {
                         users && users.map((item)=>(

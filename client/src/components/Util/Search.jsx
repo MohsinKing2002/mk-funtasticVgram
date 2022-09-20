@@ -10,8 +10,8 @@ import { getAllUsers } from '../Actions/User';
 function Search() {
 
     const dispatch = useDispatch();
-    const {users, loading, error} = useSelector(state=>state.user);
-    const [name, setName] = useState();
+    const {users, loading, error} = useSelector(state=>state.allUsers);
+    const [name, setName] = useState("");
 
     const handleFind = (e)=>{
         e.preventDefault();
@@ -47,7 +47,7 @@ function Search() {
                     <Button disabled={loading} type="submit" variant="primary">{loading ? "Finding.." : "Find"} Users</Button>
                 </Form>
             </Card.Body>
-            <Card.Footer className="text-muted">
+            <Card.Footer style={{maxHeight: "45vh", overflowY: "auto"}} className="styled-bar text-muted">
                 {
                     users && users.length > 0 ? users.map((item)=>(
                         <NavLink key={item._id} to={`/users/${item._id}`} className="link users user d-flex align-items-center">
